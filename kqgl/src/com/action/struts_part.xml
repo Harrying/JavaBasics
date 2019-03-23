@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value="action"/>
+    <package name="logindemo" extends="struts-default" namespace="/">
+        <interceptors >
+            <interceptor name="loginIntercepter" class="com.interceptor.LoginInterceptor">
+            </interceptor>
+        </interceptors>
+        <action name="loginAction" class="com.action.LoginAction" method="loginAction">
+            <result name="success">
+                /class.jsp
+            </result>
+            <result name="success1">
+                /userroot.jsp
+            </result>
+            <result name="input">
+                index.jsp
+            </result>
+        </action>
+        <action name="add_user" class="com.action.UserAction" method="add_user">
+            <interceptor-ref name="loginIntercepter"/>
+            <interceptor-ref name="defaultStack"/>
+            <result name="login">
+                index.jsp
+            </result>
+            <result name="success" type="chain">
+                select_user
+            </result>
+        </action>
+        <action name="select_user" class="com.action.UserAction" method="select_user">
+            <result name="success">
+                /show_all_user.jsp
+            </result>
+            <result name="input">
+                /success.jsp
+            </result>
+        </action>
+
+        <action name="select_one_user" class="com.action.UserAction" method="select_one_user">
+            <result name="success">
+                /show_all_user.jsp
+            </result>
+            <result name="input">
+                /show_all_user.jsp
+            </result>
+        </action>
+
+        <action name="delete_user" class="com.action.UserAction" method="delete_user">
+            <result name="success" type="chain">
+                select_user
+            </result>
+            <result name="input" type="chain">
+                select_user
+            </result>
+        </action>
+
+        <action name="update_user" class="com.action.UserAction" method="update_user">
+            <result name="success" type="chain">
+                select_user
+            </result>
+            <result name="input">
+                /updateuser.jsp
+            </result>
+        </action>
+
+        <action name="update_select_user" class="com.action.UserAction" method="update_select_user">
+            <result name="success">
+                /updateuser.jsp
+            </result>
+            <result name="input">
+                /updateuser.jsp
+            </result>
+        </action>
+
+
+        <action name="add_attend" class="com.action.AttendAction" method="add_attend">
+            <result name="input" type="chain">
+                select_attend
+            </result>
+            <result name="success" type="chain">
+                select_attend
+            </result>
+        </action>
+        <action name="select_attend" class="com.action.AttendAction" method="select_attend">
+            <result name="success">
+                /show_all_attend.jsp
+            </result>
+            <result name="input">
+                /success.jsp
+            </result>
+        </action>
+
+        <action name="select_one_attend" class="com.action.AttendAction" method="select_one_attend">
+            <result name="success">
+                /show_all_attend.jsp
+            </result>
+            <result name="input">
+                /show_all_attend.jsp
+            </result>
+        </action>
+
+        <action name="delete_attend" class="com.action.AttendAction" method="delete_attend">
+            <result name="success" type="chain">
+                select_attend
+            </result>
+            <result name="input" type="chain">
+                select_attend
+            </result>
+        </action>
+
+        <action name="update_attend" class="com.action.AttendAction" method="update_attend">
+            <result name="success" type="chain">
+                select_attend
+            </result>
+            <result name="input">
+                /updateattend.jsp
+            </result>
+        </action>
+        <action name="update_select_attend" class="com.action.AttendAction" method="update_select_attend">
+            <result name="success">
+                /updateattend.jsp
+            </result>
+            <result name="input">
+                /updateattend.jsp
+            </result>
+        </action>
+
+    </package>
+</struts>
