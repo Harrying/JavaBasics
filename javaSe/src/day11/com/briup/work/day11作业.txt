@@ -1,0 +1,38 @@
+绘制下列语句的内存图
+	a.
+		int a = 10;
+	b.
+		String s1 = "hello";
+		String s2 = new String("world");
+		Teacher t = new Teacher("zs",26,400.5);
+	c.  
+		int[] arr = new int[4];
+		int[] arr2 = {1,3,5,6,7};
+		int[] arr3 = arr;	
+	d.
+		Teacher[] tArr = new Teacher[3];
+		
+		Teacher t1 = new Teacher("zs",23,45.6);
+		Teacher t2 = new Teacher("ls",19,4.6);
+		Teacher t3 = new Teacher("ww",20,245.6);
+		
+		Teacher[] tArr2 = {t1, t2, t3};
+		
+		+ 
+编程题: 完成下面的要求
+	创建一个list，添加四个老师，基本信息如下：
+		姓名 年龄 工资
+		zhang3 18 3000
+		wang5  20 2300
+		li4    25 3500
+		wang5  22 3200
+	1）获取li4这个工人的索引
+	2）然后在 li4 之前插入一个工人，工人的具体信息需要从键盘录入
+		格式为：姓名.年龄.工资    例如： zhao6.27.234.5
+		
+	3）输出当前工人的数量。
+	4）使用3种方式 遍历集合中老师信息。【第三种方式 提示： get方法】
+	5）删除所有姓名为wang5 的老师
+	
+	
+	

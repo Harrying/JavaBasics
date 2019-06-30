@@ -1,0 +1,1 @@
+Student [name=zs, age=15, score=78.0]

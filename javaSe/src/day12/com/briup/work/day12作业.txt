@@ -1,0 +1,24 @@
+先自己完成课程所讲练习。
+
+1.模拟课堂练习
+使用LinkedList实现一个队列 数据结构
+
+2.实例化ArrayList对象用来存放字符串，然后存入多个字符串，
+然后定义一个函数，用来去除集合中字符串的重复值【可以借助另一个List】
+	public Collection<String> getSingle(Collection<String> coll);
+
+
+3.定义抽象类Person,其包含成员有name  age
+  定义Student类，继承Person，新增属性 成绩score
+  定义Teacher类，继承Person, 新增属性 工资salary
+  
+  实例化一个集合对象c1，专门存放Student对象，
+  再实例化一个集合对象c2，存放Teacher类型对象，
+  最后将c1,c2都添加到 集合c3中,
+  加强for循环方式进行遍历。
+  
+4.将上述题目中c3对象中重复的对象去除。
+  
+  
+  
+  
